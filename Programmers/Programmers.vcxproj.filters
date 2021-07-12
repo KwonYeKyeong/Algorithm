@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="키패드 누르기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="수식 최대화.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="보석 쇼핑.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="신규 아이디 추천.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="오픈채팅방.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="실패율.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="비밀지도.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="다트 게임.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="크레인 인형뽑기 게임.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="로또의 최고 순위와 최저 순위.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="문자열 압축.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="튜플.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="괄호 변환.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="뉴스 클러스터링.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
