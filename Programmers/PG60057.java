@@ -1,5 +1,6 @@
 public class PG60057 {
 
+    // 방법 1) original ver.
     public int solution(String s) {
         int answer = s.length();
 
@@ -54,5 +55,40 @@ public class PG60057 {
 
         return answer;
     }
+
+    // 방법 2) 재귀
+    // public int solution(String s) {
+    //     int answer = s.length();
+
+    //     int unit = 1;
+    //     while (unit <= s.length() / 2) {
+    //         String compressionString = getCompressionString(s, unit, 1);
+
+    //         answer = answer > compressionString.length() ? compressionString.length() : answer;
+
+    //         unit++;
+    //     }
+
+    //     return answer;
+    // }
+
+    // public String getCompressionString(String s, int unit, int count) {
+    //     if (s.length() < unit) {
+    //         return s;
+    //     }
+        
+    //     String result = "";
+    //     String preString = s.substring(0, unit);
+    //     String postString = s.substring(unit, s.length());
+
+    //     if (!postString.startsWith(preString)) {
+    //         if (count > 1) {
+    //             result += Integer.toString(count);
+    //         }
+    //         return result += preString + getCompressionString(postString, unit, 1);
+    //     }
+
+    //     return result += getCompressionString(postString, unit, count + 1);
+    // }
 
 }
