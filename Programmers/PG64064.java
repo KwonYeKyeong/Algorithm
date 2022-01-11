@@ -7,6 +7,7 @@ public class PG64064 {
     boolean[] visited;
     String[] patterns;
 
+    // 방법 1) dfs
     public int solution(String[] user_id, String[] banned_id) {
         set = new HashSet<>();
         users = user_id;
@@ -31,11 +32,16 @@ public class PG64064 {
             if (visited[i] == false && users[i].matches(patterns[idx])) {
                 visited[i] = true;
                 idxList.add(i);
+
                 dfs(idx + 1, idxList);
+
                 visited[i] = false;
                 idxList.remove(Integer.valueOf(i));
             }
         }
     }
+
+    // 방법 2) 비트마스킹
+    // 공부 후 다시 풀어볼 것
 
 }
