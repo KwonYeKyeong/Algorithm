@@ -2,6 +2,7 @@ import java.util.*;
 
 public class PG92341 {
 
+    // 방법 1) original ver.
     public class Car {
         String entranceTime;
         String exitTime;
@@ -31,7 +32,7 @@ public class PG92341 {
         }
     }
 
-    public int[] solution(int[] fees, String[] records) {
+    public int[] solution1(int[] fees, String[] records) {
         int basicTime = fees[0];
         int basicFare = fees[1];
         int perTime = fees[2];
@@ -81,6 +82,46 @@ public class PG92341 {
         }
 
         return answer;
+    }
+
+    // 방법 2) TreeMap 이용
+    public int[] solution2(int[] fees, String[] records) {
+        int basicTime = fees[0];
+        int basicFare = fees[1];
+        int perTime = fees[2];
+        int perFare = fees[3];
+
+        Map<String, Integer> parkingGarage = new TreeMap<>();
+        for (String record : records) {
+            String number = record.split(" ")[1];
+            String inOrOut = record.split(" ")[2];
+
+            int time = inOrOut.equals("IN") ? -1 : 1;
+            time *= timeToInt(record.split(" ")[0]);
+            parkingGarage.put(number, parkingGarage.getOrDefault(number, 0) + time);
+        }
+
+        int[] answer = new int[parkingGarage.size()];
+        int idx = 0;
+        for (int value : parkingGarage.values()) {
+            if (value <= 0) {
+                value += 23 * 60 + 59; // OUT -> 23:59
+            }
+            value -= basicTime;
+            int cost = basicFare;
+            if (value > 0) {
+                cost += (value % perTime == 0 ? value / perTime : value / perTime + 1) * perFare;
+            }
+            answer[idx++] = cost;
+        }
+
+        return answer;
+    }
+
+    private int timeToInt(String time) {
+        int hour = Integer.parseInt(time.split(":")[0]);
+        int minute = Integer.parseInt(time.split(":")[1]);
+        return hour * 60 + minute;
     }
 
 }
