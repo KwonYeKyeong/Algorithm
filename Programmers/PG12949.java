@@ -1,4 +1,4 @@
-public class BOJ12949 {
+public class PG12949 {
 
     public int[][] solution(int[][] arr1, int[][] arr2) {
         int row = arr1.length;
