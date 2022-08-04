@@ -1,7 +1,9 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class PG42883 {
 
+    // 1) original ver.
+    /* 
     public int n;
 
     public String solution(String number, int k) {
@@ -41,6 +43,32 @@ public class PG42883 {
             return false;
         }
         return true;
+    }
+    */
+
+    // 2) stack ver.
+    public String solution(String number, int k) {
+        int[] numbers = Arrays.stream(number.split("")).mapToInt(Integer::parseInt).toArray();
+        Stack<Integer> stack = new Stack<>();
+
+        int cnt = 0;
+        for (int n : numbers) {
+            while (cnt < k && !stack.isEmpty() && (stack.peek() < n)) {
+                stack.pop();
+                cnt++;
+            }
+            stack.push(n);
+        }
+        while (stack.size() > (number.length() - k)) {
+            stack.pop();
+        }
+
+        StringBuilder answer = new StringBuilder("");
+        while (!stack.isEmpty()) {
+            answer.insert(0, stack.pop());
+        }
+
+        return answer.toString();
     }
 
 }
