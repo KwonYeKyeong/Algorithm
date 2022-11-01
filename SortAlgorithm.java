@@ -43,6 +43,26 @@ public class SortAlgorithm {
         return sortedNumbers;
     }
 
+    /*
+     * 버블 정렬(Bubble sort)
+     * : 옆에 있는 데이터와 비교하여 더 작은 값을 앞으로 보내는 정렬(오름차순 기준)
+     * -> 시간복잡도 : O(N^2)
+     */
+    public int[] bubble_sort(int[] numbers) {
+        int[] sortedNumbers = numbers.clone();
+        int n = numbers.length;
+
+        for (int i = n; i > 0; i--) {
+            for (int j = 1; j < i; j++) {
+                if (sortedNumbers[j - 1] > sortedNumbers[j]) {
+                    swap(sortedNumbers, j - 1, j);
+                }
+            }
+        }
+
+        return sortedNumbers;
+    }
+
     private void swap(int[] array, int i1, int i2) {
         int tmp = array[i1];
         array[i1] = array[i2];
