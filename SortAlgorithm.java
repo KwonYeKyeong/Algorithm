@@ -63,6 +63,39 @@ public class SortAlgorithm {
         return sortedNumbers;
     }
 
+    /*
+     * 퀵 정렬(Quick Sort)
+     * : 특정 데이터(= pivot)를 기준으로 큰 데이터와 작은 데이터를 서로 교환한 후 배열을 두 집합으로 나누는 방식의 알고리즘
+     * -> 평균 시간복잡도 : O(NlogN) / 최악 시간복잡도 : O(N^2)
+     */
+    public void quick_sort(int[] numbers, int start, int end) {
+        if (start >= end) {
+            return;
+        }
+
+        int pivot = start;
+        int i = start + 1;
+        int j = end;
+
+        while (i <= j) {
+            while (i <= end && numbers[pivot] >= numbers[i]) {
+                i++;
+            }
+            while (j >= i && numbers[pivot] <= numbers[j]) {
+                j--;
+            }
+
+            if (i > j) {
+                swap(numbers, pivot, j);
+            } else {
+                swap(numbers, i, j);
+            }
+        }
+
+        quick_sort(numbers, start, j - 1);
+        quick_sort(numbers, j + 1, end);
+    }
+
     private void swap(int[] array, int i1, int i2) {
         int tmp = array[i1];
         array[i1] = array[i2];
